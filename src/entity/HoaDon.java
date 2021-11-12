@@ -1,24 +1,36 @@
 package entity;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class HoaDon {
 	private String mahoadon;
 	private LocalDate ngaylaphoadon;
 	private double tongtienhoadon;
-	private CTHoaDon cthd;
+	private List<CTHoaDon> cthd;
+
 
 	public HoaDon() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public HoaDon(String mahoadon, LocalDate ngaylaphoadon, double tongtienhoadon, CTHoaDon cthd) {
+	public HoaDon(String mahoadon, LocalDate ngaylaphoadon, double tongtienhoadon) {
+		this.mahoadon = mahoadon;
+		this.ngaylaphoadon = ngaylaphoadon;
+		this.tongtienhoadon = tongtienhoadon;
+		this.cthd = new ArrayList<CTHoaDon>();
+	}
+	
+	public HoaDon(String mahoadon, LocalDate ngaylaphoadon, double tongtienhoadon, List<CTHoaDon> cthd) {
 		this.mahoadon = mahoadon;
 		this.ngaylaphoadon = ngaylaphoadon;
 		this.tongtienhoadon = tongtienhoadon;
 		this.cthd = cthd;
 	}
+	
+	
 
 	public String getMahoadon() {
 		return mahoadon;

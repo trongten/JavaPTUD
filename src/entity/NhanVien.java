@@ -1,117 +1,191 @@
 package entity;
 
+
+import java.sql.Date;
 import java.util.Objects;
 
 public class NhanVien {
 	private String manhanvien;
 	private String hoten;
+	private Date ngaysinh;
 	private String diachi;
-	private String sdt;
-	private boolean gioitinh;
+	private String cmnd;
 	private boolean chucvu;
-	private byte ca;
-	private String maql;
-
+	private boolean gioitinh;
+	private int ca;
+	private NhanVien quanly;
+	private String sdt;
 	public NhanVien() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public NhanVien(String manv, String hoten, String diachi, String sdt, boolean gioitinh, boolean chucvu, byte ca,
-			String maql) {
-		this.manhanvien = manv;
+	
+
+	public NhanVien(String manhanvien, String hoten, Date ngaysinh, String diachi, String cmnd, boolean chucvu,
+			boolean gioitinh, int ca, NhanVien quanly, String sdt) {
+		
+		this.manhanvien = manhanvien;
 		this.hoten = hoten;
+		this.ngaysinh = ngaysinh;
 		this.diachi = diachi;
-		this.sdt = sdt;
-		this.gioitinh = gioitinh;
+		this.cmnd = cmnd;
 		this.chucvu = chucvu;
+		this.gioitinh = gioitinh;
 		this.ca = ca;
-		this.maql = maql;
+		this.quanly = quanly;
+		this.sdt = sdt;
 	}
 
-	public String getManv() {
+
+
+	public NhanVien(String manhanvien) {
+		super();
+		this.manhanvien = manhanvien;
+	}
+
+
+
+	public String getManhanvien() {
 		return manhanvien;
 	}
 
-	public void setManv(String manv) {
-		this.manhanvien = manv;
+
+
+	public void setManhanvien(String manhanvien) {
+		this.manhanvien = manhanvien;
 	}
+
+
 
 	public String getHoten() {
 		return hoten;
 	}
 
+
+
 	public void setHoten(String hoten) {
 		this.hoten = hoten;
 	}
+
+
+
+	public Date getNgaysinh() {
+		return ngaysinh;
+	}
+
+
+
+	public void setNgaysinh(Date ngaysinh) {
+		this.ngaysinh = ngaysinh;
+	}
+
+
 
 	public String getDiachi() {
 		return diachi;
 	}
 
+
+
 	public void setDiachi(String diachi) {
 		this.diachi = diachi;
 	}
 
-	public String getSdt() {
-		return sdt;
+
+
+	public String getCmnd() {
+		return cmnd;
 	}
 
-	public void setSdt(String sdt) {
-		this.sdt = sdt;
+
+
+	public void setCmnd(String cmnd) {
+		this.cmnd = cmnd;
 	}
 
-	public boolean isGioitinh() {
-		return gioitinh;
-	}
 
-	public void setGioitinh(boolean gioitinh) {
-		this.gioitinh = gioitinh;
-	}
 
 	public boolean isChucvu() {
 		return chucvu;
 	}
 
+
+
 	public void setChucvu(boolean chucvu) {
 		this.chucvu = chucvu;
 	}
 
-	public byte getCa() {
+
+
+	public boolean isGioitinh() {
+		return gioitinh;
+	}
+
+
+
+	public void setGioitinh(boolean gioitinh) {
+		this.gioitinh = gioitinh;
+	}
+
+
+
+	public int getCa() {
 		return ca;
 	}
 
-	public void setCa(byte ca) {
+
+
+	public void setCa(int ca) {
 		this.ca = ca;
 	}
 
-	public String getMaql() {
-		return maql;
+
+
+	public NhanVien getQuanly() {
+		return quanly;
 	}
 
-	public void setMaql(String maql) {
-		this.maql = maql;
-	}
-	
-	@Override
-	public int hashCode() {
-		return Objects.hash(manhanvien);
+
+
+	public void setQuanly(NhanVien quanly) {
+		this.quanly = quanly;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		NhanVien other = (NhanVien) obj;
-		return Objects.equals(manhanvien, other.manhanvien);
+
+
+	public String getSdt() {
+		return sdt;
 	}
+
+
+
+	public void setSdt(String sdt) {
+		this.sdt = sdt;
+	}
+
+
 
 	@Override
 	public String toString() {
-		return "NhanVien [manhanvien=" + manhanvien + ", hoten=" + hoten + ", diachi=" + diachi + ", sdt=" + sdt + ", gioitinh="
-				+ gioitinh + ", chucvu=" + chucvu + ", ca=" + ca + ", maql=" + maql + "]";
+		return "NhanVien [manhanvien=" + manhanvien + ", hoten=" + hoten + ", ngaysinh=" + ngaysinh + ", diachi="
+				+ diachi + ", cmnd=" + cmnd + ", chucvu=" + chucvu + ", gioitinh=" + gioitinh + ", ca=" + ca
+				+ ", quanly=" + quanly.getManhanvien() + ", sdt=" + sdt + "]";
 	}
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+	
+	
+	
 }

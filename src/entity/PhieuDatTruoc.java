@@ -22,6 +22,24 @@ public class PhieuDatTruoc {
 		this.ngaynhanhang = ngaynhanhang;
 		this.ctpdt = ctpdt;
 	}
+	
+	
+	public PhieuDatTruoc(String maphieudat, LocalDate ngaylap, LocalDate ngaynhanhang, List<CTPhieuDatTruoc> ctpdt,
+			KhachHang kh) {
+		super();
+		this.maphieudat = maphieudat;
+		this.ngaylap = ngaylap;
+		this.ngaynhanhang = ngaynhanhang;
+		this.ctpdt = ctpdt;
+		this.kh = kh;
+	}
+
+	public PhieuDatTruoc(String maphieudat, LocalDate ngaylap, LocalDate ngaynhanhang) {
+		super();
+		this.maphieudat = maphieudat;
+		this.ngaylap = ngaylap;
+		this.ngaynhanhang = ngaynhanhang;
+	}
 
 	public List<CTPhieuDatTruoc> getCtpdt() {
 		return ctpdt;
