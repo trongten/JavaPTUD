@@ -6,17 +6,54 @@ public class SanPham {
 
 	private String masanpham;
 	private String tensanpham;
+	private int soluong;
 	private double giadonvi;
 	private double gianhap;
+	private String anhsanpham;
+	private String xuatxu;
 	private String chatlieu;
-	private String nhaxuatban;
 	private int sotrang;
 	private String tentacgia;
-	private String xuatxu;
-	private String anhsanpham;
+	private String nhaxuatban;
 	private String nhacungcap;
-	private int soluong;
 	private Loai loai;
+
+	public SanPham(String masanpham, String tensanpham, int soluong, double giadonvi, double gianhap, String anhsanpham,
+			String xuatxu, String chatlieu, int sotrang, String tentacgia, String nhaxuatban, String nhacungcap,
+			Loai loai) {
+		super();
+		this.masanpham = masanpham;
+		this.tensanpham = tensanpham;
+		this.soluong = soluong;
+		this.giadonvi = giadonvi;
+		this.gianhap = gianhap;
+		this.anhsanpham = anhsanpham;
+		this.xuatxu = xuatxu;
+		this.chatlieu = chatlieu;
+		this.sotrang = sotrang;
+		this.tentacgia = tentacgia;
+		this.nhaxuatban = nhaxuatban;
+		this.nhacungcap = nhacungcap;
+		this.loai = loai;
+	}
+	
+	public SanPham(String masanpham, String tensanpham, int soluong, double giadonvi, double gianhap, String anhsanpham,
+			Loai loai) {
+		super();
+		this.masanpham = masanpham;
+		this.tensanpham = tensanpham;
+		this.soluong = soluong;
+		this.giadonvi = giadonvi;
+		this.gianhap = gianhap;
+		this.anhsanpham = anhsanpham;
+		this.xuatxu = xuatxu;
+		this.chatlieu = chatlieu;
+		this.sotrang = sotrang;
+		this.tentacgia = tentacgia;
+		this.nhaxuatban = nhaxuatban;
+		this.nhacungcap = nhacungcap;
+		this.loai = loai;
+	}
 
 	public SanPham() {
 		// TODO Auto-generated constructor stub
@@ -26,21 +63,18 @@ public class SanPham {
 		this.masanpham = masanpham;
 	}
 
-	public SanPham(String masanpham, String tensanpham, double gianhap, String chatlieu, String nhaxuatban, int sotrang,
-			String tentacgia, String xuatxu, String anhsanpham, String nhacungcap, int soluong, Loai loai) {
-		this.masanpham = masanpham;
-		this.tensanpham = tensanpham;
-		this.giadonvi = gianhap * 0.1 + gianhap;
-		this.gianhap = gianhap;
-		this.chatlieu = chatlieu;
-		this.nhaxuatban = nhaxuatban;
-		this.sotrang = sotrang;
-		this.tentacgia = tentacgia;
-		this.xuatxu = xuatxu;
-		this.anhsanpham = anhsanpham;
-		this.nhacungcap = nhacungcap;
-		this.soluong = soluong;
+	
+
+	public Loai getLoai() {
+		return loai;
+	}
+
+	public void setLoai(Loai loai) {
 		this.loai = loai;
+	}
+
+	public void setGiadonvi(double giadonvi) {
+		this.giadonvi = giadonvi;
 	}
 
 	public String getMasanpham() {

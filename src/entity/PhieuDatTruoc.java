@@ -1,5 +1,6 @@
 package entity;
 
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
@@ -8,56 +9,15 @@ public class PhieuDatTruoc {
 
 
 	private String maphieudat;
-	private LocalDate ngaylap;
-	private LocalDate ngaynhanhang;
-	private List<CTPhieuDatTruoc> ctpdt;
+	private Date ngaylap;
+	private Date ngaynhanhang;
 	private double tongtienhoadon;
+	private NhanVien nv;
 	private KhachHang kh;
-	
-	public PhieuDatTruoc() {
-	}
-
-	public PhieuDatTruoc(LocalDate ngaylap, LocalDate ngaynhanhang, List<CTPhieuDatTruoc> ctpdt) {
-		this.ngaylap = ngaylap;
-		this.ngaynhanhang = ngaynhanhang;
-		this.ctpdt = ctpdt;
-	}
-	
-	
-	public PhieuDatTruoc(String maphieudat, LocalDate ngaylap, LocalDate ngaynhanhang, List<CTPhieuDatTruoc> ctpdt,
-			KhachHang kh) {
-		super();
-		this.maphieudat = maphieudat;
-		this.ngaylap = ngaylap;
-		this.ngaynhanhang = ngaynhanhang;
-		this.ctpdt = ctpdt;
-		this.kh = kh;
-	}
-
-	public PhieuDatTruoc(String maphieudat, LocalDate ngaylap, LocalDate ngaynhanhang) {
-		super();
-		this.maphieudat = maphieudat;
-		this.ngaylap = ngaylap;
-		this.ngaynhanhang = ngaynhanhang;
-	}
-
-	public List<CTPhieuDatTruoc> getCtpdt() {
-		return ctpdt;
-	}
-
-	public void setCtpdt(List<CTPhieuDatTruoc> ctpdt) {
-		this.ctpdt = ctpdt;
-	}
-
-	public double getTongtienhoadon() {
-		return ctpdt
-				.stream()
-				.mapToDouble(ctpdt -> ctpdt.getThanhtien())
-				.sum();
-	}
-
-	public void setTongtienhoadon(double tongtienhoadon) {
-		this.tongtienhoadon = tongtienhoadon;
+	@Override
+	public String toString() {
+		return "PhieuDatTruoc [maphieudat=" + maphieudat + ", ngaylap=" + ngaylap + ", ngaynhanhang=" + ngaynhanhang
+				+ ", tongtienhoadon=" + tongtienhoadon + ", nv=" + nv + ", kh=" + kh + "]";
 	}
 
 	public String getMaphieudat() {
@@ -68,37 +28,71 @@ public class PhieuDatTruoc {
 		this.maphieudat = maphieudat;
 	}
 
-	public LocalDate getNgaylap() {
+	public Date getNgaylap() {
 		return ngaylap;
 	}
 
-	public void setNgaylap(LocalDate ngaylap) {
+	public void setNgaylap(Date ngaylap) {
 		this.ngaylap = ngaylap;
 	}
 
-	public LocalDate getNgaynhanhang() {
+	public Date getNgaynhanhang() {
 		return ngaynhanhang;
 	}
 
-	public void setNgaynhanhang(LocalDate ngaynhanhang) {
+	public void setNgaynhanhang(Date ngaynhanhang) {
 		this.ngaynhanhang = ngaynhanhang;
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(maphieudat);
+	public double getTongtienhoadon() {
+		return tongtienhoadon;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		PhieuDatTruoc other = (PhieuDatTruoc) obj;
-		return Objects.equals(maphieudat, other.maphieudat);
+	public void setTongtienhoadon(double tongtienhoadon) {
+		this.tongtienhoadon = tongtienhoadon;
 	}
+
+	public NhanVien getNv() {
+		return nv;
+	}
+
+	public void setNv(NhanVien nv) {
+		this.nv = nv;
+	}
+
+	public KhachHang getKh() {
+		return kh;
+	}
+
+	public void setKh(KhachHang kh) {
+		this.kh = kh;
+	}
+
+	public PhieuDatTruoc(String maphieudat, Date ngaylap, Date ngaynhanhang, double tongtienhoadon) {
+		super();
+		this.maphieudat = maphieudat;
+		this.ngaylap = ngaylap;
+		this.ngaynhanhang = ngaynhanhang;
+		this.tongtienhoadon = tongtienhoadon;
+	}
+
+	
+	
+	public PhieuDatTruoc() {
+		
+	}
+
+	public PhieuDatTruoc(String maphieudat, Date ngaylap, Date ngaynhanhang, double tongtienhoadon, NhanVien nv,
+			KhachHang kh) {
+		super();
+		this.maphieudat = maphieudat;
+		this.ngaylap = ngaylap;
+		this.ngaynhanhang = ngaynhanhang;
+		this.tongtienhoadon = tongtienhoadon;
+		this.nv = nv;
+		this.kh = kh;
+	}
+	
+	
 	
 }

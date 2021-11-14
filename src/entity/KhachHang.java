@@ -16,6 +16,13 @@ public class KhachHang {
 		this.tenkhachhang = tenkhachhang;
 		this.sodienthoai = sodienthoai;
 	}
+	
+	
+
+	public KhachHang(String makh) {
+
+		this.makh = makh;
+	}
 
 	public KhachHang(String makh, String tenkhachhang, String sodienthoai) {
 		super();

@@ -169,8 +169,12 @@ public class NhanVien {
 	public String toString() {
 		return "NhanVien [manhanvien=" + manhanvien + ", hoten=" + hoten + ", ngaysinh=" + ngaysinh + ", diachi="
 				+ diachi + ", cmnd=" + cmnd + ", chucvu=" + chucvu + ", gioitinh=" + gioitinh + ", ca=" + ca
-				+ ", quanly=" + quanly.getManhanvien() + ", sdt=" + sdt + "]";
+				+ ", quanly=" + quanly + ", sdt=" + sdt + "]";
 	}
+
+
+
+
 
 
 

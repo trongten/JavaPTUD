@@ -13,6 +13,11 @@ public class Loai {
 		this.tenloai = tenloai;
 		this.maloai = maloai;
 	}
+	public Loai( String maloai) {
+		
+		
+		this.maloai = maloai;
+	}
 	public String getTenloai() {
 		return tenloai;
 	}
