@@ -43,11 +43,11 @@ private ArrayList<SanPham> list;
 		}
 		return n > 0;
 	}
-	public boolean themtest(SanPham p){
+	public boolean themSach(SanPham p){
 		Connection con = Database.getInstance().getConnection();
 		int n = 0;
 		try {
-			String sql = " insert into SanPham values(?,?,?,?,?,?,?,?,?,?,?,?)";
+			String sql = " insert into SanPham values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setString(1, p.getMasanpham());
 			stmt.setString(2, p.getTensanpham());
@@ -57,10 +57,11 @@ private ArrayList<SanPham> list;
 			stmt.setString(6, p.getAnhsanpham());
 			stmt.setString(7, null);
 			stmt.setString(8,null);
-			stmt.setInt(9, 0);
-			stmt.setString(10, null);
-			stmt.setString(11,null);
-			stmt.setString(12, p.getLoai().getMaloai());
+			stmt.setInt(9, p.getSotrang());
+			stmt.setString(10, p.getTentacgia());
+			stmt.setString(11, p.getNhaxuatban());
+			stmt.setString(12,null);
+			stmt.setString(13, p.getLoai().getMaloai());
 			
 			n = stmt.executeUpdate();
 		} catch (Exception e) {
@@ -68,6 +69,34 @@ private ArrayList<SanPham> list;
 		}
 		return n > 0;
 	}
+	
+	public boolean themVanPhongPham(SanPham p){
+		Connection con = Database.getInstance().getConnection();
+		int n = 0;
+		try {
+			String sql = " insert into SanPham values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			PreparedStatement stmt = con.prepareStatement(sql);
+			stmt.setString(1, p.getMasanpham());
+			stmt.setString(2, p.getTensanpham());
+			stmt.setInt(3, p.getSoluong());
+			stmt.setDouble(4, p.getGiadonvi());
+			stmt.setDouble(5, p.getGianhap());
+			stmt.setString(6, p.getAnhsanpham());
+			stmt.setString(7, p.getXuatxu());
+			stmt.setString(8, p.getChatlieu());
+			stmt.setInt(9, 0);
+			stmt.setString(10, null);
+			stmt.setString(11, null);
+			stmt.setString(12, p.getNhacungcap());
+			stmt.setString(13, p.getLoai().getMaloai());
+			
+			n = stmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return n > 0;
+	}
+	
 	
 	/*
 	 * xóa SanPham
@@ -96,7 +125,7 @@ private ArrayList<SanPham> list;
 		Connection con = Database.getInstance().getConnection();
 		int n = 0;
 		try {
-			String sql = " update SanPham set tensanpham = ? , soluong = ?, giadonvi= ? , gianhap = ?, anhsanpham = ? , xuatxu = ? chatlieu = ? sotrang = ? , tentacgia = ? nhaxuatban = ? , nhacungcap = ? , maloai = ? where maSanPham = ?";
+			String sql = " update SanPham set tensanpham = ? , soluong = ?, giadonvi= ? , gianhap = ?, anhsanpham = ? , xuatxu = ?, chatlieu = ?, sotrang = ? , tentacgia = ?, nhaxuatban = ? , nhacungcap = ? , maloai = ? where masanpham = ?";
 			PreparedStatement stmt = con.prepareStatement(sql);
 			
 			stmt.setString(13, p.getMasanpham());
@@ -146,4 +175,42 @@ private ArrayList<SanPham> list;
 		}
 		return list;
 	}
+	
+	
+	
+	
+	public SanPham timSanPham(String masp){
+		Connection con = Database.getInstance().getConnection();
+		int n = 0;
+		SanPham sp = null;
+		try {
+			String sql = " select *  from SanPham where masanpham = ?";
+			PreparedStatement stmt = con.prepareStatement(sql);
+			stmt.setString(1, masp);
+			
+			
+			
+			ResultSet rs = stmt.executeQuery();
+			while(rs.next()) {
+			 sp = new SanPham(rs.getString(1),rs.getString(2),rs.getInt(3),
+					rs.getDouble(4),rs.getDouble(5),rs.getString(6),rs.getString(7),
+					rs.getString(8),rs.getInt(9),rs.getString(10),rs.getString(11),
+					rs.getString(12),new Loai(rs.getString(13)));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return sp;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

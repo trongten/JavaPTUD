@@ -36,7 +36,7 @@ public class HoaDon {
 		this.tongtienhoadon = tongtienhoadon;
 		
 	}
-
+	
 
 	public KhachHang getKhachhang() {
 		return khachhang;

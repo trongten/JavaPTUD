@@ -7,6 +7,55 @@ public class CTHoaDon {
 	private HoaDon hd;
 	
 	
+	public CTHoaDon() {
+		// TODO Auto-generated constructor stub
+	}
+	
+
+	public CTHoaDon(int soluongsanpham,HoaDon hd, SanPham sp) {
+		
+		this.soluongsanpham = soluongsanpham;
+		this.sp = sp;
+		this.hd=hd;
+		this.thanhtien = soluongsanpham*sp.getGiadonvi();
+	}
+	
+	public CTHoaDon(Double thanhtien,int soluongsanpham,HoaDon hd, SanPham sp) {
+		
+		this.soluongsanpham = soluongsanpham;
+		this.sp = sp;
+		this.hd=hd;
+		this.thanhtien =  thanhtien;
+	}
+
+
+	@Override
+	public String toString() {
+		return "CTHoaDon [thanhtien=" + thanhtien + ", soluongsanpham=" + soluongsanpham + ", sp=" + sp + ", hd=" + hd
+				+ "]";
+	}
+
+
+	public double getThanhtien() {
+		return thanhtien;
+	}
+
+
+	public void setThanhtien(double thanhtien) {
+		this.thanhtien = thanhtien;
+	}
+
+
+	public int getSoluongsanpham() {
+		return soluongsanpham;
+	}
+
+
+	public void setSoluongsanpham(int soluongsanpham) {
+		this.soluongsanpham = soluongsanpham;
+	}
+
+
 	public SanPham getSp() {
 		return sp;
 	}
@@ -27,33 +76,7 @@ public class CTHoaDon {
 	}
 
 
-	
 
-
-	public CTHoaDon() {
-		// TODO Auto-generated constructor stub
-	}
-	
-
-	public CTHoaDon(int soluongsanpham, SanPham sp,HoaDon hd) {
-		this.thanhtien = soluongsanpham*sp.getGiadonvi();
-		this.soluongsanpham = soluongsanpham;
-		this.sp = sp;
-		this.hd=hd;
-	}
-
-
-	public double getThanhtien() {
-		return soluongsanpham*sp.getGiadonvi();
-	}
-
-	public int getSoluongsanpham() {
-		return soluongsanpham;
-	}
-
-	public void setSoluongsanpham(int soluongsanpham) {
-		this.soluongsanpham = soluongsanpham;
-	}
 	
 	
 }

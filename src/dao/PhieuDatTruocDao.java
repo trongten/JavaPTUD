@@ -22,7 +22,7 @@ private ArrayList<PhieuDatTruoc> list;
 		Connection con = Database.getInstance().getConnection();
 		int n = 0;
 		try {
-			String sql = " insert into PhieuDatTruoc values(?,?,?,?,?,?)";
+			String sql = " insert into PhieuDatTruoc values(?,?,?,?,?,?,?)";
 			PreparedStatement stmt = con.prepareStatement(sql);
 			stmt.setString(1, p.getMaphieudat());
 			stmt.setDate(2, p.getNgaylap());
@@ -30,7 +30,7 @@ private ArrayList<PhieuDatTruoc> list;
 			stmt.setDouble(4, p.getTongtienhoadon());
 			stmt.setString(5, p.getNv().getManhanvien());
 			stmt.setString(6, p.getKh().getMakh());
-			
+			stmt.setString(7, p.getTrangthai());
 			n = stmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -66,15 +66,16 @@ private ArrayList<PhieuDatTruoc> list;
 		Connection con = Database.getInstance().getConnection();
 		int n = 0;
 		try {
-			String sql = " update PhieuDatTruoc set ngaylap = ?, ngaynhanhang = ? , tongtienphieudat = ? , manhanvien = ? , makhachhang = ?   where maphieudat = ?";
+			String sql = " update PhieuDatTruoc set ngaylap = ?, ngaynhanhang = ? , tongtienphieudat = ? , manhanvien = ? , makhachhang = ? , trangthai = ?  where maphieudat = ?";
 			PreparedStatement stmt = con.prepareStatement(sql);
 			
-			stmt.setString(6, p.getMaphieudat());
+			stmt.setString(7, p.getMaphieudat());
 			stmt.setDate(1, p.getNgaylap());
 			stmt.setDate(2, p.getNgaynhanhang());
 			stmt.setDouble(3, p.getTongtienhoadon());
 			stmt.setString(4, p.getNv().getManhanvien());
 			stmt.setString(5, p.getKh().getMakh());
+			stmt.setString(6, p.getTrangthai());
 			
 			n = stmt.executeUpdate();
 		} catch (Exception e) {
@@ -95,7 +96,7 @@ private ArrayList<PhieuDatTruoc> list;
 			ResultSet rs = stmt.executeQuery("Select * from PhieuDatTruoc");
 			while(rs.next()) {
 				
-				PhieuDatTruoc kh = new PhieuDatTruoc(rs.getString(1),rs.getDate(2),rs.getDate(3),rs.getDouble(4),new NhanVien(rs.getString(5)),new KhachHang(rs.getString(6)));
+				PhieuDatTruoc kh = new PhieuDatTruoc(rs.getString(1),rs.getDate(2),rs.getDate(3),rs.getDouble(4),new NhanVien(rs.getString(5)),new KhachHang(rs.getString(6)),rs.getString(7));
 				
 				list.add(kh);
 			}

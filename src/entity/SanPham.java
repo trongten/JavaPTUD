@@ -188,10 +188,11 @@ public class SanPham {
 
 	@Override
 	public String toString() {
-		return "SanPham [masanpham=" + masanpham + ", tensanpham=" + tensanpham + ", giadonvi=" + giadonvi
-				+ ", gianhap=" + gianhap + ", chatlieu=" + chatlieu + ", nhaxuatban=" + nhaxuatban + ", sotrang="
-				+ sotrang + ", tentacgia=" + tentacgia + ", xuatxu=" + xuatxu + ", anhsanpham=" + anhsanpham
-				+ ", nhacungcap=" + nhacungcap + ", soluong=" + soluong + "]";
+		return "SanPham [masanpham=" + masanpham + ", tensanpham=" + tensanpham + ", soluong=" + soluong + ", giadonvi="
+				+ giadonvi + ", gianhap=" + gianhap + ", anhsanpham=" + anhsanpham + ", xuatxu=" + xuatxu
+				+ ", chatlieu=" + chatlieu + ", sotrang=" + sotrang + ", tentacgia=" + tentacgia + ", nhaxuatban="
+				+ nhaxuatban + ", nhacungcap=" + nhacungcap + ", loai=" + loai + "]";
 	}
+
 
 }

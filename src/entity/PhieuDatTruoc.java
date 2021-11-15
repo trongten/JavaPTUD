@@ -14,10 +14,15 @@ public class PhieuDatTruoc {
 	private double tongtienhoadon;
 	private NhanVien nv;
 	private KhachHang kh;
+	private String trangthai;
+	
+	
+	
+
 	@Override
 	public String toString() {
 		return "PhieuDatTruoc [maphieudat=" + maphieudat + ", ngaylap=" + ngaylap + ", ngaynhanhang=" + ngaynhanhang
-				+ ", tongtienhoadon=" + tongtienhoadon + ", nv=" + nv + ", kh=" + kh + "]";
+				+ ", tongtienhoadon=" + tongtienhoadon + ", nv=" + nv + ", kh=" + kh + ", trangthai=" + trangthai + "]";
 	}
 
 	public String getMaphieudat() {
@@ -91,6 +96,33 @@ public class PhieuDatTruoc {
 		this.tongtienhoadon = tongtienhoadon;
 		this.nv = nv;
 		this.kh = kh;
+		this.trangthai = "Chưa nhận hàng";
+	}
+	
+	public String getTrangthai() {
+		return trangthai;
+	}
+
+	public void setTrangthai(String trangthai) {
+		this.trangthai = trangthai;
+	}
+
+	public PhieuDatTruoc(String maphieudat, Date ngaylap, Date ngaynhanhang, double tongtienhoadon, NhanVien nv,
+			KhachHang kh,String trangthai) {
+		super();
+		this.maphieudat = maphieudat;
+		this.ngaylap = ngaylap;
+		this.ngaynhanhang = ngaynhanhang;
+		this.tongtienhoadon = tongtienhoadon;
+		this.nv = nv;
+		this.kh = kh;
+		this.trangthai = trangthai;
+	}
+	
+	public PhieuDatTruoc(String maphieudat) {
+		super();
+		this.maphieudat = maphieudat;
+		
 	}
 	
 	

@@ -18,6 +18,13 @@ public class TaiKhoan {
 	}
 
 
+	public TaiKhoan(String taikhoan, String matkhau, NhanVien nv) {
+		super();
+		this.taikhoan = taikhoan;
+		this.matkhau = matkhau;
+		this.nv = nv;
+	}
+
 	public String getTaikhoan() {
 		return taikhoan;
 	}
@@ -53,4 +60,10 @@ public class TaiKhoan {
 		TaiKhoan other = (TaiKhoan) obj;
 		return Objects.equals(taikhoan, other.taikhoan);
 	}
+
+	@Override
+	public String toString() {
+		return "TaiKhoan [taikhoan=" + taikhoan + ", matkhau=" + matkhau + ", nv=" + nv + "]";
+	}
+	
 }

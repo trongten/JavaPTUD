@@ -8,7 +8,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 import connectDB.Database;
+import entity.Loai;
 import entity.NhanVien;
+import entity.SanPham;
 
 public class NhanVienDao {
 private ArrayList<NhanVien> list;
@@ -115,4 +117,32 @@ private ArrayList<NhanVien> list;
 		}
 		return list;
 	}
+	
+	public NhanVien timNhanVien(String manv){
+		Connection con = Database.getInstance().getConnection();
+		
+		NhanVien nv=null;
+		try {
+			String sql = " select *  from NhanVien where manhanvien = ?";
+			PreparedStatement stmt = con.prepareStatement(sql);
+			stmt.setString(1, manv);
+			
+			
+			
+			ResultSet rs = stmt.executeQuery();
+			while(rs.next()) {
+			 nv = new NhanVien(rs.getString(1),rs.getString(2),rs.getDate(3),rs.getString(4),
+						rs.getString(5),
+						rs.getBoolean(6),rs.getBoolean(7),rs.getInt(8),
+						new NhanVien(rs.getString(9)),rs.getString(10));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return nv;
+	}
+	
+	
+	
 }

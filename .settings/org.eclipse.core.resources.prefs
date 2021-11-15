@@ -1,7 +1,12 @@
 eclipse.preferences.version=1
+encoding//src/app/testDao.java=UTF-8
+encoding//src/dao/CTHoaDonDao.java=UTF-8
+encoding//src/dao/CTPhieuDatTruocDao.java=UTF-8
 encoding//src/dao/HoaDonDao.java=UTF-8
 encoding//src/dao/KhachHangDao.java=UTF-8
 encoding//src/dao/LoaiDao.java=UTF-8
 encoding//src/dao/NhanVienDao.java=UTF-8
 encoding//src/dao/PhieuDatTruocDao.java=UTF-8
 encoding//src/dao/SanPhamDao.java=UTF-8
+encoding//src/dao/TaiKhoanDao.java=UTF-8
+encoding//src/entity/PhieuDatTruoc.java=UTF-8

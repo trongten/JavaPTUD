@@ -10,12 +10,32 @@ public class CTPhieuDatTruoc {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public CTPhieuDatTruoc(int soluongsanpham, SanPham sp, PhieuDatTruoc pdt) {
+	
+
+
+
+
+	public CTPhieuDatTruoc(int soluongsanpham, double thanhtien, SanPham sp, PhieuDatTruoc pdt) {
+		super();
 		this.soluongsanpham = soluongsanpham;
-		this.thanhtien = sp.getGiadonvi()*soluongsanpham;
+		this.thanhtien = thanhtien;
 		this.sp = sp;
-		this.pdt=pdt;
+		this.pdt = pdt;
 	}
+	
+	public CTPhieuDatTruoc(int soluongsanpham, SanPham sp, PhieuDatTruoc pdt) {
+		super();
+		this.soluongsanpham = soluongsanpham;
+		this.thanhtien = soluongsanpham*sp.getGiadonvi();
+		this.sp = sp;
+		this.pdt = pdt;
+	}
+
+	public void setThanhtien(double thanhtien) {
+		this.thanhtien = thanhtien;
+	}
+
+
 
 	public PhieuDatTruoc getPdt() {
 		return pdt;
@@ -44,4 +64,19 @@ public class CTPhieuDatTruoc {
 	public void setSp(SanPham sp) {
 		this.sp = sp;
 	}
+
+
+
+
+
+
+	@Override
+	public String toString() {
+		return "CTPhieuDatTruoc [soluongsanpham=" + soluongsanpham + ", thanhtien=" + thanhtien + ", sp=" + sp
+				+ ", pdt=" + pdt + "]";
+	}
+	
+	
+	
+	
 }
